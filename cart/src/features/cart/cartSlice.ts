@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AppThunk, RootState, store } from '../../app/store';
-import { Products } from '../products/Products';
+import { RootState } from '../../app/store';
 
 export interface Product {
     id: number

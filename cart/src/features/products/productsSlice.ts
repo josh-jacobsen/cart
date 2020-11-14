@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AppThunk, RootState, store } from '../../app/store';
-import { ProductQuantity, Product } from '../cart/cartSlice';
+import { AppThunk, RootState } from '../../app/store';
+import { ProductQuantity } from '../cart/cartSlice';
 
 export interface ProductState {
     loading: boolean,
