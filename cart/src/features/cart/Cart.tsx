@@ -8,6 +8,10 @@ import {addProduct, addProductById, removeProduct} from './cartSlice'
 export function Cart() {
     const products = useSelector((state: RootState) => state.cart);
     const dispatch = useDispatch();
+    const cartTotal = () =>
+        products.reduce(
+            (sum, product) => sum + (product.product.price * product.quantity), 0
+        );
 
     return (
         <div>
@@ -23,7 +27,12 @@ export function Cart() {
             
                 </div>
             )}
-            
+            <div>
+                <p>The cart total is:</p>
+                {(Math.round(cartTotal() * 100) / 100).toFixed(2)}
+
+
+            </div>
         </div>
     )
 }

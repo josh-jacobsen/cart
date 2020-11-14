@@ -7,6 +7,7 @@ import './App.css';
 
 function App() {
   return (
+    <React.StrictMode>
     <div className="App">
       <header className="App-header">
         <Cart />
@@ -54,7 +55,8 @@ function App() {
           </a>
         </span>
       </header>
-    </div>
+      </div>
+    </React.StrictMode>
   );
 }
 
