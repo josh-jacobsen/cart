@@ -1,11 +1,16 @@
 import React from 'react';
 import { Counter } from './features/counter/Counter';
+import { Cart } from './features/cart/Cart';
+import { Products } from './features/products/Products';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Cart />
+        <Products />
         <Counter />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
