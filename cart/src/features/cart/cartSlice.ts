@@ -1,10 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AppThunk, RootState } from '../../app/store';
+import { AppThunk, RootState, store } from '../../app/store';
 
 export interface Product {
     id: number
     name: string,
     price: number;
+}
+
+export interface ProductQuantity {
+    product: Product,
+    quantity: number
 }
 
 const initialState: Product[] = [
@@ -28,10 +33,14 @@ export const cartSlice = createSlice({
                 state.push(newProduct)
             }
         },
+        removeProduct: (state, action: PayloadAction<number>) => {
+            return state = state.filter(p => p.id != action.payload)
+        }
+    },
   },
-});
+);
 
-export const { addProduct, addProductById } = cartSlice.actions;
+export const { addProduct, addProductById, removeProduct } = cartSlice.actions;
 
 export const selectCart = (state: RootState) => state.cart;
 

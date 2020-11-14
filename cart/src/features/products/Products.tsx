@@ -20,7 +20,7 @@ export function Products() {
                  <div key={p.id}>Name: {p.name} Price: {p.price}
                      <button onClick={() => dispatch(addProductById(p))}
                      
-                        >Add Product to Cart
+                        >+
                      </button>
                  </div>
 
