@@ -5,7 +5,7 @@ import styles from '../counter/Counter.module.css';
 import {addProduct, addProductById, removeProduct} from './cartSlice'
 
 
-export function Cart() {
+export const Cart = () => {
     const products = useSelector((state: RootState) => state.cart);
     const dispatch = useDispatch();
     const cartTotal = () =>
