@@ -17,8 +17,8 @@ export function Products() {
         <div>
             <div>This is the Products component
              {products.map(p => 
-                 <div key={p.id}>Name: {p.name} Price: {p.price}
-                     <button onClick={() => dispatch(addProductById(p))}
+                 <div key={p.id}>Name: {p.name} Price: {(Math.round(p.price * 100) / 100).toFixed(2)}
+                     <button onClick={() => dispatch(addProductById({id: p.id, name: p.name, price: p.price}))}
                      
                         >+
                      </button>

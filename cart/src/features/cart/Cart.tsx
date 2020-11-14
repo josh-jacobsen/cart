@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppThunk, RootState } from '../../app/store';
 import styles from '../counter/Counter.module.css';
-import {addProduct, removeProduct} from './cartSlice'
+import {addProduct, addProductById, removeProduct} from './cartSlice'
 
 
 export function Cart() {
@@ -13,13 +13,17 @@ export function Cart() {
         <div>
             <div>This is the cart component</div>
             {products.map(p =>
-                <div key={p.id}>Name: {p.name} Price: {p.price}
-                <button onClick={() => dispatch(removeProduct(p.id))}>
-                 -        
-                </button>
+                <div key={p.product.id}>Name: {p.product.name} Price: {(Math.round(p.product.price * 100) / 100).toFixed(2)} Quantity: {p.quantity}
+                    <button onClick={() => dispatch(removeProduct(p.product.id))}>
+                        -        
+                    </button>
+                    <button onClick={() => dispatch(addProductById({id: p.product.id, price: p.product.price, name: p.product.name}))}>
+                        +
+                    </button>
             
                 </div>
             )}
+            
         </div>
     )
 }
