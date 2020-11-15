@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { AppThunk, RootState } from '../../app/store';
-import styles from '../counter/Counter.module.css';
-import {addProduct, addProductById, removeProduct} from './cartSlice'
-
+import { RootState } from '../../app/store';
+import { addProductById, removeProduct} from './cartSlice'
 
 export const Cart = () => {
     const products = useSelector((state: RootState) => state.cart);

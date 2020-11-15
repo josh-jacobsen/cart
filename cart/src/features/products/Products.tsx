@@ -19,20 +19,15 @@ export const Products = () => {
             }
             {!products.loading &&
                 <div>Available products:
-             {products.products.map(p => 
-                 <div key={p.product.id}>Name: {p.product.name} Price: {(Math.round(p.product.price * 100) / 100).toFixed(2)}
-                     <button onClick={() => dispatch(addProductById({id: p.product.id, name: p.product.name, price: p.product.price}))}
-                     
-                        >+
-                     </button>
-                 </div>
-
-
-             )}
-
-            </div>
+                    {products.products.map(p => 
+                        <div key={p.product.id}>Name: {p.product.name} Price: {(Math.round(p.product.price * 100) / 100).toFixed(2)}
+                            <button onClick={() => dispatch(addProductById({ id: p.product.id, name: p.product.name, price: p.product.price }))}>
+                                +
+                            </button>
+                        </div>
+                    )}
+                </div>
             }
-            
-            </div>
+        </div>
     )
 }
