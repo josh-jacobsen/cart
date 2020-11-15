@@ -17,7 +17,7 @@ export const Cart = () => {
         <div>
             <div>Items in your cart:</div>
             {products.map(p =>
-                <div key={p.product.id}>Name: {p.product.name} Price: {(Math.round(p.product.price * 100) / 100).toFixed(2)} Quantity: {p.quantity}
+                <div key={p.product.id}>Name: {p.product.name} Price: {(Math.round(p.product.price * 100) / 100).toFixed(2)} Quantity:<span data-testid="quantity"> {p.quantity} </span>
                     <button onClick={() => dispatch(removeProduct(p.product.id))}>
                         -        
                     </button>

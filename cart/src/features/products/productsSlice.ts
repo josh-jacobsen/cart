@@ -18,6 +18,9 @@ export const productsSlice = createSlice({
     reducers: {
         fetchProducts: (state, action: PayloadAction<ProductQuantity[]>) => {
             state.products = action.payload;
+            // I'm taking a short cut here and setting the loading state directly, 
+            // rather than creating and dispatching an action to do so. This is just 
+            // in the intrests of saving time 
             state.loading = false;
     },
     },
@@ -30,12 +33,12 @@ export default productsSlice.reducer;
 
 export const selectProducts = (state: RootState) => state.products;
 
-
-// Implemented this async call as the instructions asked to "3. Handle async call in redux (redux-thunk or Redux-Saga)"
+// Implemented this async call (with 500 ms delay) as the instructions were to  
+// "Handle async call in redux (redux-thunk or Redux-Saga)"
 export const fetchProductsAsync = () : AppThunk => dispatch => {
   setTimeout(() => {
     dispatch(fetchProducts(productsFetched));
-  }, 2000);
+  }, 500);
 };
 
 const productsFetched: ProductQuantity[] = [
