@@ -15,7 +15,7 @@
 | All prices should be displayed to 2 decimal places | Complete | 
 | Error checking will be set to strict for viewing completed code | Complete | 
 | Project will work as expected with the latest version of React | Complete | Using React version 17
-| Handle async call in redux (redux-thunk or Redux-Saga) | Complete |
+| Handle async call in redux (redux-thunk or Redux-Saga) | Complete | Added an async call [here](https://github.com/josh-jacobsen/ezyvet/blob/master/src/features/products/productsSlice.ts#L36)
 | Material-ui (feel free to style it using styled-components) | Not Yet Complete | Will add styling if I have time
 | One or two unit test (Enzyme or react-testing-library) | Complete | Have added a couple of RTL tests. Will add more if I have time
 | The cart will need to keep it’s state during page loads / refreshes | Not Yet Complete | I would likely use [redux-persist](https://www.npmjs.com/package/redux-persist) for this; I just didn't have the time to wire it up (though it looks pretty straight forward)
